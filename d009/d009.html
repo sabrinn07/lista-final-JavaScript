@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>d009</title>
+    <h1>Reajuste salarial</h1>
+    <h2>Clique no botão para iniciar</h2>
+
+    <style>
+        body{
+            background-color:black;
+        }
+        h1{
+            font-style: normal;
+            color: white;
+            font-size: 50;
+            text-align: center;
+        }
+        h2{
+            color:rgb(223, 91, 91);
+            font-style:italic;
+            text-align:center;
+        }
+        #reajuste{
+            background-color: black;
+            color: black;
+            height: 50px;
+            width: 100px;
+            border-width: 30px;
+            border-style: solid;
+            border-color:azure;
+        }
+        div{
+            margin:0 auto;
+            width: 100px;
+        }
+        p{
+            text-align: center;
+            color: rgb(59, 151, 255);
+        }
+        section{
+            text-align: center;
+            width: 100px;
+        }
+        #reajSal{
+            margin: 0 auto;
+            width: 100px;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <div><button id = "reajuste" onclick = "reajustar()"></button></div>
+    <p>Não precisa colocar o símbolo"%"</p>
+    <section id = 'reajSal'></section>
+    <script>
+        function reajustar(){
+            var nome = window.prompt("Qual é o nome do funcionário?")
+            var sal= Number(window.prompt("Qual é o salário de "+ nome + "?"))
+            var porc = Number(window.prompt("O salário de " + nome + " vai ser reajustado em qual porcentagem?"))
+            var salFinal = window.document.getElementById('reajSal');
+            salFinal.innerHTML = '<p>O salário atual de '+ nome + ' é R$:'+ sal + '. Com o aumento de '+ porc + '%, o salário vai aumentar R$:' + sal*porc/100 + ' no próximo mês. E a partir daí, '+ nome + ' vai passar a ganhar R$:' + ((sal*porc/100)+sal);
+        }
+    </script>
+</body>
+</html>
